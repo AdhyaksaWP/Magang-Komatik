@@ -1,8 +1,10 @@
 const eventButton = document.getElementById("info-button");
 const moreInfo = document.getElementById("more-info");
 
+let displayStatus = false;
+
 function displayMoreInfo() {
-    // Simplified and structured text with headings and bullet points
+
     moreInfo.innerHTML = `
         <h2>Manajerial Divisions</h2>
         <ul>
@@ -26,6 +28,14 @@ function displayMoreInfo() {
             <li>Liga KOMATIK (Internal UGM selection for GEMASTIK)</li>
         </ul>
     `;
+    if (displayStatus === false){
+        moreInfo.style.display = 'block';
+        displayStatus = true;
+    }
+    else{
+        moreInfo.style.display = 'none';
+        displayStatus = false;
+    }
 }
 
 eventButton.addEventListener("click", displayMoreInfo);
